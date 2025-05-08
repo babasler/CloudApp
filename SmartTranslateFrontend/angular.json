@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "cloud-app": {
+    "SmartTranslateFrontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/cloud-app",
+            "outputPath": "dist/smart-translate-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "cloud-app:build:production"
+              "buildTarget": "SmartTranslateFrontend:build:production"
             },
             "development": {
-              "buildTarget": "cloud-app:build:development"
+              "buildTarget": "SmartTranslateFrontend:build:development"
             }
           },
           "defaultConfiguration": "development"

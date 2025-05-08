@@ -1,0 +1,44 @@
+.translator-component {
+    display: flex;
+    flex-direction: row;
+    width: 75vb;
+    height: 60vh;
+    margin: 100;
+    margin-top: 5vh;
+}
+.source-part{
+    width: 50%;
+    height: 100%;
+}
+.target-part{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+}
+.source-selector{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    background-color: red;
+}
+.target-selector{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    background-color: yellow;
+}
+.source-text{
+    height: 90%;
+    width: 100%;
+    background-color: purple;
+}
+.target-text{
+    height: 90%;
+    width: 100%;
+    background-color: orange;
+}
