@@ -1,18 +1,34 @@
 <div class=translator-component>
     <div class="source-part">
         <div class="source-selector">
-                <p-select [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" placeholder="Sprache auswählen"class="w-full md:w-56" />
+            <div class="source-content">
+                <p-select [options]="possibleLanguages" [(ngModel)]="sourceLanguage" optionLabel="name"
+                    placeholder="Sprache auswählen" class="w-full md:w-56" />
+                <p-button label="Übersetzten" [disabled]=!canTranslate() severity="secondary" (onClick)="translate()" />
+            </div>
         </div>
         <div class="source-text">
-
+            <p-iftalabel>
+                <textarea pTextarea id="description" [(ngModel)]="sourceText"  size="large"></textarea>
+                <label style="font-size: large;" for="description">Quelltext</label>
+            </p-iftalabel>
         </div>
     </div>
     <div class="target-part">
         <div class="target-selector">
-            <p-select [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" placeholder="Sprache auswählen"class="w-full md:w-56" />
+            <p-select [options]="possibleLanguages" [(ngModel)]="targetLanguage" optionLabel="name"
+                placeholder="Sprache auswählen" class="w-full md:w-56" />
         </div>
         <div class="target-text">
+            <div class="">
+                <p-card [style]="{ 'margin-left': '1vb' }">
+                    <label style="font-size: large; color: gray;">Übersetzung</label>
+                    <p class="">
+                        {{ targetText }}
+                    </p>
 
+                </p-card>
+            </div>
         </div>
 
     </div>
