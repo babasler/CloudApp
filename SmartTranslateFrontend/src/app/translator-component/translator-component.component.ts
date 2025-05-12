@@ -5,6 +5,7 @@ import { TextareaModule } from 'primeng/textarea';
 import { IftaLabelModule } from 'primeng/iftalabel';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { Fluid } from 'primeng/fluid';
 
 interface language {
   name: string;
@@ -13,7 +14,7 @@ interface language {
 
 @Component({
   selector: 'translator-component',
-  imports: [FormsModule, SelectModule, TextareaModule, IftaLabelModule, ButtonModule, CardModule],
+  imports: [FormsModule, SelectModule, TextareaModule, IftaLabelModule, ButtonModule, CardModule, Fluid],
   templateUrl: './translator-component.component.html',
   styleUrl: './translator-component.component.scss',
   standalone: true

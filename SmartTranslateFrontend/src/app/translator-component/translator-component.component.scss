@@ -41,15 +41,25 @@
 .source-text {
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 90%;
     width: 100%;
     background-color: purple;
+    outline: 1px solid grey;
+
+    p-iftaLabel {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border-radius: 0px;
+    }
 }
 
 .target-text {
     height: 90%;
     width: 100%;
     background-color: orange;
+    outline: 1px solid grey;
 }
 
 .source-content {
@@ -59,10 +69,5 @@
     width: 100%;
     padding: 0 1rem;
 }
-.p-textarea {
-    display: flex;
-    width: 40vb; 
-    height: 100%; 
-    font-size: 1.3rem;
-}
+
 

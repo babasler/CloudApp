@@ -8,10 +8,14 @@
             </div>
         </div>
         <div class="source-text">
-            <p-iftalabel>
-                <textarea pTextarea id="description" [(ngModel)]="sourceText"  size="large"></textarea>
-                <label style="font-size: large;" for="description">Quelltext</label>
-            </p-iftalabel>
+            <p-iftaLabel style="border-radius: 0px; display: block;">
+                <textarea pTextarea [(ngModel)]="sourceText" fluid="true" (resize)="false"
+                    style="resize: none; border-radius: 0px;">
+                </textarea>
+                <label style="font-size: large; color: gray;">
+                    Quelltext
+                </label>
+            </p-iftaLabel>
         </div>
     </div>
     <div class="target-part">
@@ -20,16 +24,13 @@
                 placeholder="Sprache auswählen" class="w-full md:w-56" />
         </div>
         <div class="target-text">
-            <div class="">
-                <p-card [style]="{ 'margin-left': '1vb' }">
-                    <label style="font-size: large; color: gray;">Übersetzung</label>
-                    <p class="">
-                        {{ targetText }}
-                    </p>
-
-                </p-card>
-            </div>
+            <p-card
+                [style]="{ 'margin-left': '0', 'margin-right': '0', 'width': '100%', 'height': '100%', borderRadius: '0px'}">
+                <label style="font-size: large; color: gray;">Übersetzung</label>
+                <p class="">
+                    {{ targetText }}
+                </p>
+            </p-card>
         </div>
-
     </div>
 </div>
