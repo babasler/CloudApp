@@ -1,0 +1,27 @@
+<div class="card">
+    <p-table [value]="favorites" [tableStyle]="{ 'min-width': '50rem' }">
+        <!-- Header Template -->
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Index</th>
+                <th>Favorit</th>
+                <th>Aktionen</th>
+            </tr>
+        </ng-template>
+
+        <!-- Body Template -->
+        <ng-template pTemplate="body" let-favorite let-i="rowIndex">
+            <tr>
+                <td>{{ i+1 }}</td>
+                <td>{{ favorite.field }}</td>
+                <td>
+                    <div style="display: flex; gap: .2rem;">
+                        <p-button icon="pi pi-times" severity="secondary" (onClick)="deleteFavorite(favorite)" />
+                        <p-button icon="pi pi-pencil" severity="secondary" />
+                        <p-button icon="pi pi-file-arrow-up" severity="secondary" (onClick)="translateFavorite(favorite)" />
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

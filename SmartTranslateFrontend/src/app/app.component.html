@@ -1,3 +1,4 @@
 <div class="app">
-    <translator-component></translator-component>
+    <translator-component [setSourceTextFromFavorites]="selectedFavoriteText"></translator-component>
+    <favorites-component (favoriteToTranslate)="onFavoriteSelected($event)"></favorites-component>
 </div>
