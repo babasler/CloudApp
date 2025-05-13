@@ -1,10 +1,11 @@
-import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SelectModule } from 'primeng/select';
 import { TextareaModule } from 'primeng/textarea';
 import { IftaLabelModule } from 'primeng/iftalabel';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { favorite } from '../models/favorite';
 
 interface language {
   name: string;
@@ -26,6 +27,7 @@ export class TranslatorComponentComponent implements OnInit, OnChanges {
   targetText: string = '';
 
   @Input() setSourceTextFromFavorites: string[] = [];
+  @Output() addFavorite = new EventEmitter<favorite>();
 
   ngOnInit() {
     this.possibleLanguages = [
@@ -46,9 +48,6 @@ export class TranslatorComponentComponent implements OnInit, OnChanges {
     this.targetText = '';
     this.sourceLanguage = { name: '', code: '' };
     this.targetLanguage = { name: '', code: '' };
-  }
-  saveAsFavorite(): void {
-    //TODO: Hier mit Restabfrage arbeiten
   }
   canSaveAsFavorite(): boolean {
     return this.sourceText.length > 0 && this.sourceLanguage.code.length > 0
@@ -72,5 +71,14 @@ export class TranslatorComponentComponent implements OnInit, OnChanges {
   }
   translate(): void {
     this.targetText = 'Hello World'; // TODO: Hier mit Restabfrage arbeiten
+  }
+  saveAsFavorite(): void {
+    const newFavorite: favorite = {
+      field: this.sourceText,
+      language: this.sourceLanguage.name,
+      languageCode: this.sourceLanguage.code,
+    };
+  
+    this.addFavorite.emit(newFavorite); // Event auslösen
   }
 }
